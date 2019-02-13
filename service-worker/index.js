@@ -3,11 +3,11 @@ import {
   PREPEND,
   VERSION,
   REQUEST_MODE,
-  LENIENT_ERRORS
+  LENIENT_ERRORS,
+  CACHE_KEY_PREFIX
 } from 'ember-service-worker-asset-cache/service-worker/config';
 import cleanupCaches from 'ember-service-worker/service-worker/cleanup-caches';
 
-const CACHE_KEY_PREFIX = 'esw-asset-cache';
 const CACHE_NAME = `${CACHE_KEY_PREFIX}-${VERSION}`;
 const CACHE_URLS = FILES.map((file) => {
   return new URL(file, (PREPEND || self.location)).toString();
